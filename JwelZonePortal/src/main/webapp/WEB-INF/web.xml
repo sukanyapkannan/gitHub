@@ -1,0 +1,24 @@
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <!-- <servlet>
+  <servlet-name>dispatcher</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DemoSer</servlet-name>
+  	<display-name>DemoSer</display-name>
+  	<description></description>
+  	<servlet-class>com.niit.DemoSer</servlet-class>
+  </servlet> -->
+  
+  <servlet-mapping>
+  <servlet-name>dispatcher</servlet-name>
+  <url-pattern></url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DemoSer</servlet-name>
+  	<url-pattern>/DemoSer</url-pattern>
+  </servlet-mapping>
+  
+ 
+</web-app>

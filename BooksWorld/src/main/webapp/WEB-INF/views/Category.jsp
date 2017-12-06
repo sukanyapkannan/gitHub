@@ -22,10 +22,12 @@
 <div class="form-group">
 <input type="text" name="catdescription" id="catdescription" tabindex="2" class="form-control" placeholder="about category">
 </div>
+
 <div class="col-sm-6 col-sm-offset-3">
 <input type="submit" name="submit" id="submit" tabindex="4" class="form-control btn btn-submit" value="SUBMIT">
 </div>
 </form>
+
 
 <br/>
 <table class="table">
@@ -39,7 +41,7 @@
 <td>${c.catName}</td>
 <td>${c.catdescription }</td>
 <td><a href="DeleteCat?catId=${c.catId }"><span class="glyphicon glyphicon-trash"></span></a></td>
-<td><a href="Update	Cat?catId=${c.catId } }"><span class="glyphicon glyphicon-pencil"></span></a></td>
+<td><a href="UpdateCat?catId=${c.catId }"><span class="glyphicon glyphicon-pencil"></span></a></td>
 </tr>
 </c:forEach>
 

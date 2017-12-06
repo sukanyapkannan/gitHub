@@ -35,7 +35,14 @@ public void saveCategory(Category u)
 }
 public void updateCategory(Category c)
 {
-	
+	Session s=sessionF.openSession();
+	 s.beginTransaction();
+	s.update(c);
+	s.flush();
+	s.getTransaction().commit();
+	s.close();
+     
+     
 }
 public void deleteCategory(Category c)
 {
@@ -48,8 +55,7 @@ public void deleteCategory(Category c)
 public List<Category> getCategorys()
 {
 	Session s=sessionF.openSession();
-	List<Category> clist=s.createQuery("from Category").list();
-	
+	List<Category> clist=s.createQuery("from Category").list();	
 	return clist;
 }
 

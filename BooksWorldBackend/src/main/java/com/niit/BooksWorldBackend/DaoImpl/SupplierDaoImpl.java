@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.BooksWorldBackend.DAO.SupplierDao;
+import com.niit.BooksWorldBackend.model.Category;
 import com.niit.BooksWorldBackend.model.Supplier;
 
 
@@ -39,16 +40,29 @@ public void updateSupplier(Supplier s) {
 	
 	
 }
-public void deletSupplier(Supplier s) {
+public void deletSupplier(Supplier s) 
+{
+	Session k=sessionF.openSession();
+	k.beginTransaction();
+	k.delete(s);
+	k.getTransaction().commit();
+	k.close();
 
 }
-public List<Supplier> getSuppliers() {
+public List<Supplier> getSuppliers()
+{
 	
-	return null;
+	Session s=sessionF.openSession();
+	List<Supplier> clist=s.createQuery("from Supplier").list();
+	
+	return clist;
 }
-public Supplier getSupplier(int supId) {
+public Supplier getSupplier(int supId)
+{
 	
-	return null;
+	Session s=sessionF.openSession();
+	Supplier c=(Supplier)s.get(Supplier.class, supId);
+	return c;
 }
 
 }

@@ -7,9 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
-
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity
@@ -21,8 +23,14 @@ public class Category implements Serializable
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int catId;
+
+@NotEmpty(message="Category name is mandatory")
 private String catName;
+@NotEmpty(message="Category description cannot be blank")
 private String catdescription;
+
+ 
+
 public int getCatId() {
 	return catId;
 }

@@ -13,6 +13,7 @@ public class HomeController
 	@RequestMapping("/")
 	String index()
 	{
+		System.out.println("Login");
 		return "BooksWorldHomePage";
 	}
 	@RequestMapping("/SignUp")

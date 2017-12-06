@@ -18,8 +18,9 @@ import com.niit.BooksWorldBackend.model.Category;
 import com.niit.BooksWorldBackend.model.Supplier;
 import com.niit.BooksWorldBackend.model.User;
 
+
 @Configuration
-@ComponentScan("com.niit.WearStyleBackend")
+@ComponentScan("com.niit.BooksWorldBackend")
 @EnableTransactionManagement
 public class HibernateConfig 
 {
@@ -33,8 +34,6 @@ public class HibernateConfig
 	        sessionBuilder.addAnnotatedClass(User.class);
 	        sessionBuilder.addAnnotatedClass(Category.class);
 	        sessionBuilder.addAnnotatedClass(Supplier.class);
-	       
-	        
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired

@@ -30,8 +30,18 @@ public class CategoryController
 		Category c=new Category();
 		c.setCatName(catname);
 		c.setCatdescription(catdescription);
-		
 		catDao.saveCategory(c);
+		return "redirect:/Category";
+	}
+	
+	@RequestMapping(value="/editCat")
+	String editCat(@RequestParam("catid")String catid,@RequestParam("catname")String catname,@RequestParam("catdescription")String catdescription)
+	{
+		Category c=new Category();
+		c.setCatId(Integer.parseInt(catid));
+		c.setCatName(catname);
+		c.setCatdescription(catdescription);
+		catDao.updateCategory(c);
 		return "redirect:/Category";
 	}
 	@RequestMapping(value="/DeleteCat")
@@ -45,7 +55,8 @@ public class CategoryController
 	String updateCat(@RequestParam("catId") int catId,Model m)
 	{
 		Category c=catDao.getCategory(catId);
-		m.addAttribute("category", c);
+		m.addAttribute("cate", c);
 		return "CategoryUp";
 	}
+
 }
